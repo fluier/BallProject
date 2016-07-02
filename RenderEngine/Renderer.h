@@ -1,6 +1,6 @@
 #pragma once
 
-#include"../entity/RawModel.h"
+#include"../models/RawModel.h"
 
 namespace Adina
 {

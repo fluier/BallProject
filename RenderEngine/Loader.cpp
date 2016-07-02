@@ -2,9 +2,11 @@
 
 #include<iostream>
 #include "Loader.h"
+#include"../texture/ImageLoader.h"
 
 namespace  Adina {
 	std::vector<GLuint>  vbos;
+	std::vector<ModelTexture> textures;
 	Loader::Loader()
 	{
 	}
@@ -29,11 +31,20 @@ namespace  Adina {
 		GLuint vaiID = storeIndicesInAttributeList(indices);
 		return RawModel(vaoID, vaiID, indices.size());
 	}
+	ModelTexture Loader::loadTexture(const std::string filePath)
+	{
+		ModelTexture t = ImageLoader::loadPNG(filePath);
+		textures.push_back(t);
+		return t;
+	}
 	void Loader::clearUP()
 	{
 		std::cout << "Facem curatenie" << std::endl;
 		for (GLuint vbo : vbos) {
 			glDeleteBuffers(1, &vbo);
+		}
+		for (ModelTexture texture : textures) {
+			glDeleteTextures(1, &texture.id);
 		}
 	}
 	GLuint Loader::storeDataInAttributeList(int attributeNumber, std::vector<float> data)
