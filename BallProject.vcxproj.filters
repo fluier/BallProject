@@ -42,9 +42,6 @@
     <ClInclude Include="graphic\GLSLProgram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="graphic\IOManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="graphic\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,9 +60,6 @@
     <ClInclude Include="entity\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="entity\RawModel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RenderEngine\Loader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -79,6 +73,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="math\GraphicModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture\ImageLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture\PicoPNG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\IOManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture\ModelTexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="models\RawModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="models\TexturedModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -110,9 +122,6 @@
     <ClCompile Include="graphic\GLSLProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="graphic\IOManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="graphic\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -131,9 +140,6 @@
     <ClCompile Include="entity\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="entity\RawModel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RenderEngine\Loader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -147,6 +153,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="math\GraphicModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture\ImageLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture\PicoPNG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\IOManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture\ModelTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="models\RawModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="models\TexturedModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -116,11 +116,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="models\TexturedModel.h" />
+    <ClInclude Include="texture\PicoPNG.h" />
+    <ClInclude Include="texture\ImageLoader.h" />
+    <ClInclude Include="texture\ModelTexture.h" />
     <ClInclude Include="math\GraphicModel.h" />
     <ClInclude Include="math\Complex.h" />
     <ClInclude Include="entity\Camera.h" />
     <ClInclude Include="graphic\GLSLProgram.h" />
-    <ClInclude Include="graphic\IOManager.h" />
+    <ClInclude Include="utility\IOManager.h" />
     <ClInclude Include="graphic\Vertex.h" />
     <ClInclude Include="graphic\Window.h" />
     <ClInclude Include="math\MyFunction.h" />
@@ -135,16 +139,20 @@
     <ClInclude Include="physic\vec2.h" />
     <ClInclude Include="physic\vec3.h" />
     <ClInclude Include="math\Transform.h" />
-    <ClInclude Include="entity\RawModel.h" />
+    <ClInclude Include="models\RawModel.h" />
     <ClInclude Include="RenderEngine\Renderer.h" />
     <ClInclude Include="utility\Error.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="models\TexturedModel.cpp" />
+    <ClCompile Include="texture\PicoPNG.cpp" />
+    <ClCompile Include="texture\ImageLoader.cpp" />
+    <ClCompile Include="texture\ModelTexture.cpp" />
     <ClCompile Include="math\GraphicModel.cpp" />
     <ClCompile Include="math\Complex.cpp" />
     <ClCompile Include="entity\Camera.cpp" />
     <ClCompile Include="graphic\GLSLProgram.cpp" />
-    <ClCompile Include="graphic\IOManager.cpp" />
+    <ClCompile Include="utility\IOManager.cpp" />
     <ClCompile Include="graphic\Vertex.cpp" />
     <ClCompile Include="graphic\Window.cpp" />
     <ClCompile Include="math\MyFunction.cpp" />
@@ -159,7 +167,7 @@
     <ClCompile Include="physic\vec2.cpp" />
     <ClCompile Include="physic\vec3.cpp" />
     <ClCompile Include="math\Transform.cpp" />
-    <ClCompile Include="entity\RawModel.cpp" />
+    <ClCompile Include="models\RawModel.cpp" />
     <ClCompile Include="RenderEngine\Renderer.cpp" />
     <ClCompile Include="utility\Error.cpp" />
   </ItemGroup>
