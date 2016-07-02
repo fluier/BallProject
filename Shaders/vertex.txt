@@ -1,0 +1,16 @@
+#version 130
+
+precision mediump float;
+
+in vec3 vertexPosition;
+in vec4 vertexColor;
+
+out vec4 vertexColor_out;
+
+uniform mat4 transformMatrix;
+
+void main()
+{
+	gl_Position = transformMatrix * vec4(vertexPosition,1.0f);
+	vertexColor_out = vertexColor;
+}

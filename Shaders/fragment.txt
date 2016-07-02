@@ -1,0 +1,12 @@
+#version 130
+
+precision mediump float;
+
+
+in vec4 vertexColor_out;
+
+out vec4 out_color; 
+void main()
+{
+	out_color = vertexColor_out;
+}
