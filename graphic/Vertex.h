@@ -14,14 +14,9 @@ namespace Adina
 	struct ColorRGBA8
 	{
 		ColorRGBA8() :
-			r(0), g(0), b(0), a(0)
-		{
-
-		}
+			r(0), g(0), b(0), a(0)	{	}
 		ColorRGBA8(GLubyte r, GLubyte g, GLubyte b, GLubyte a):
-			r(r), g(g), b(b), a(a)
-		{
-		}
+			r(r), g(g), b(b), a(a){	}
 		GLubyte r;
 		GLubyte g;
 		GLubyte b;
@@ -31,6 +26,8 @@ namespace Adina
 	{
 		float u;
 		float v;
+		UV(float u, float v) :
+			u(u), v(v) {}
 	};
 	struct Vertex
 	{
@@ -39,6 +36,7 @@ namespace Adina
 		UV uv;
 
 		Vertex(Position p, ColorRGBA8 c);
+		Vertex(Position p, UV uv, ColorRGBA8 c);
 		void setPosition(float x, float y);
 		void setPosition(float x, float y, float z);
 		void setColor(GLubyte r, GLubyte g, GLubyte b, GLubyte a);

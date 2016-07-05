@@ -4,13 +4,19 @@ precision mediump float;
 
 in vec3 vertexPosition;
 in vec4 vertexColor;
+in vec2 textureCoords;
 
 out vec4 vertexColor_out;
 
+out vec2 textureCoords_out;
+
 uniform mat4 transformMatrix;
+uniform mat4 projectionMatrix;
+uniform mat4 viewMatrix;
 
 void main()
 {
-	gl_Position = transformMatrix * vec4(vertexPosition,1.0f);
+	gl_Position = projectionMatrix *viewMatrix * transformMatrix * vec4(vertexPosition,1.0f);
 	vertexColor_out = vertexColor;
+	textureCoords_out = textureCoords;
 }

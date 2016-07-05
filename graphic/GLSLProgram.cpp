@@ -134,11 +134,27 @@ namespace Adina {
 	void GLSLProgram::setUniform1i(const std::string& uniformName, const int& value){
 		glUniform1i(getUniformLocation(uniformName), value);
 	}
+	void GLSLProgram::loadBoolean(const std::string & uniformName, const bool & value)
+	{
+		float toLoad = 0;
+		if (value) {
+			toLoad = 1;
+		}
+		glUniform1f(getUniformLocation(uniformName), toLoad);
+	}
 	//==================================================================================
 	//==================================================================================
 	//==================================================================================
 	void GLSLProgram::setUniform1f(const std::string& uniformName, const float& value){
 		glUniform1f(getUniformLocation(uniformName), value);
+	}
+	void GLSLProgram::setUniform3f(const std::string & uniformName, const float& v1, const float& v2, const float& v3)
+	{
+		glUniform3f(getUniformLocation(uniformName), v1, v2, v3);
+	}
+	void GLSLProgram::setUniformVector(const std::string & uniformName, const vec3 & value)
+	{
+		glUniform3f(getUniformLocation(uniformName), value.x, value.y, value.z);
 	}
 	//==================================================================================
 	//==================================================================================

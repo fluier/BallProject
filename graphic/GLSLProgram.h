@@ -3,6 +3,7 @@
 #include <string>
 
 #include"../physic/mat4.h"
+#include"../physic/vec3.h"
 
 typedef unsigned int GLuint;
 typedef int GLint;
@@ -27,8 +28,11 @@ namespace Adina {
 
 		/// send only int value
 		void setUniform1i(const std::string& uniformName, const int& value);
+		void loadBoolean(const std::string& uniformName, const bool& value);
 		/// send only float value
 		void setUniform1f(const std::string& uniformName, const float& value);
+		void setUniform3f(const std::string& uniformName, const float& v1, const float& v2, const float& v3);
+		void setUniformVector(const std::string& uniformName, const vec3& value);
 		void setUniformMatrix4fv(const std::string& uniformName, const mat4& value);
 
         void use();

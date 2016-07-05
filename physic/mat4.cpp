@@ -53,10 +53,10 @@ namespace Adina {
 		return rez;
 	}
 	/******************************************************************
-	1  0   0   0
-	0 cos -sin 0
-	0 sin cos  0
-	0  0   0   1
+	1  0    0   0
+	0 cos  sin  0
+	0 -sin cos  0
+	0  0    0   1
 	*/
 	void mat4::rotX(float angle)
 	{
@@ -67,10 +67,10 @@ namespace Adina {
 		}
 		val[0][0] = 1;
 		val[1][1] = cos(angle);
-		val[1][2] = -sin(angle);
-		val[2][1] = sin(angle);
-		val[3][3] = cos(angle);
-		val[4][4] = 1;
+		val[1][2] = sin(angle);
+		val[2][1] = -sin(angle);
+		val[2][2] = cos(angle);
+		val[3][3] = 1;
 	}
 	/******************************************************************
 	 cos 0 sin 0
@@ -90,7 +90,7 @@ namespace Adina {
 		val[2][0] = -sin(angle);
 		val[2][2] = cos(angle);
 		val[1][1] = 1;
-		val[3][3] = 3;
+		val[3][3] = 1;
 	}
 	/******************************************************************
 	cos -sin 0 0

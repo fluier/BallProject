@@ -116,6 +116,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="entity\Entity.h" />
     <ClInclude Include="models\TexturedModel.h" />
     <ClInclude Include="texture\PicoPNG.h" />
     <ClInclude Include="texture\ImageLoader.h" />
@@ -130,7 +131,7 @@
     <ClInclude Include="math\MyFunction.h" />
     <ClInclude Include="RenderEngine\Loader.h" />
     <ClInclude Include="MainClass.h" />
-    <ClInclude Include="math\math.h" />
+    <ClInclude Include="math\my_math.h" />
     <ClInclude Include="physic\mat.h" />
     <ClInclude Include="physic\mat2.h" />
     <ClInclude Include="physic\mat3.h" />
@@ -144,6 +145,7 @@
     <ClInclude Include="utility\Error.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="entity\Entity.cpp" />
     <ClCompile Include="models\TexturedModel.cpp" />
     <ClCompile Include="texture\PicoPNG.cpp" />
     <ClCompile Include="texture\ImageLoader.cpp" />
@@ -158,7 +160,7 @@
     <ClCompile Include="math\MyFunction.cpp" />
     <ClCompile Include="RenderEngine\Loader.cpp" />
     <ClCompile Include="MainClass.cpp" />
-    <ClCompile Include="math\math.cpp" />
+    <ClCompile Include="math\my_math.cpp" />
     <ClCompile Include="physic\mat.cpp" />
     <ClCompile Include="physic\mat2.cpp" />
     <ClCompile Include="physic\mat3.cpp" />

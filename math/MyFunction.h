@@ -13,6 +13,8 @@ namespace Adina
 		GraphicModel f1();
 		GraphicModel f2();
 		GraphicModel f3();
+		GraphicModel rectangle();
+		GraphicModel cube();
 	};
 
 

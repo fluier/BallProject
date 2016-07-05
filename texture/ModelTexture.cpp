@@ -1,5 +1,6 @@
 #include<GL\glew.h>
 
+#include<iostream>
 
 #include"ModelTexture.h"
 

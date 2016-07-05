@@ -6,6 +6,8 @@
 
 #define someDefaultValue  950
 
+//#define GL_GLEXT_PROTOTYPES
+
 namespace Adina{
 	//==================================================================================
 	Window::Window():

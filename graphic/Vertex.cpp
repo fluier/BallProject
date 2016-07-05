@@ -3,9 +3,13 @@
 
 namespace Adina{
 	Vertex::Vertex(Position p, ColorRGBA8 c):
-		position(p),color(c)
+		position(p),uv(0,0),color(c)
 	{
 	
+	}
+	Vertex::Vertex(Position p, UV uv, ColorRGBA8 c):
+		position(p),uv(uv),color(c)
+	{
 	}
 	/// Some Helper Function
 	void Vertex::setPosition(float x, float y) {

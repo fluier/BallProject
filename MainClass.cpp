@@ -6,8 +6,13 @@
 #include"math\MyFunction.h"
 #include"math\GraphicModel.h"
 
+#include"entity\Entity.h"
+#include"math\my_math.h"
+
 Adina::RawModel model;
 Adina::MyFunction f;
+Adina::TexturedModel* texturedModel;
+Adina::Entity* entity;
 
 namespace Adina {
 
@@ -24,14 +29,17 @@ namespace Adina {
 	}
 	void MainClass::init()
 	{
-		GraphicModel  m1 = f.f2();
+		GraphicModel  m1 = f.cube();
 		window.create("Adina", 500, 500, 0);
 		initShaders();
 		
-		projection.setToZero();
-		setProjectionMatrix(60, 1, -100, projection);
+		m_renderer = new Renderer();
+		m_renderer->init(m_shader);
 
 		model = m_loader.loadToVAO(m1.getVertices(),m1.getIndices());
+		texturedModel = new TexturedModel(model, m_loader.loadTexture("res/tex1.png"));
+		entity = new Entity(*texturedModel,vec3(0,0,-10.0f),0.0f, 0.0f, 0.0f, 1.0f);
+		m_camera.init(vec3(0,0,0),0,0,0);
 	}
 
 	void MainClass::run()
@@ -46,40 +54,34 @@ namespace Adina {
 
 	void MainClass::update()
 	{
-		input();
+		SDL_Event evnt;
+		while (SDL_PollEvent(&evnt)) {
+			input(evnt);
+			m_camera.input(evnt);
+		}
 	}
-	float time;
 	void MainClass::draw()
 	{
-		m_renderer.prepare();
-
-		calcTranslationMatrix(translationMatrix, 0, 0, -10);
-		calcRotationMatrix(rotMatrix, time);
-		transformMatrix = projection * rotMatrix * translationMatrix;
+		mat4 viewMatrix = createViewMatrix(m_camera);
+		entity->increaseRotation(0.001, 0.001, 0);
 		m_shader.use();
-		m_shader.setUniformMatrix4fv("transformMatrix", transformMatrix);
-	
-		m_renderer.render(model);
-
+		m_shader.setUniformMatrix4fv("viewMatrix", viewMatrix);
+		m_renderer->render(*entity, m_shader);
 		m_shader.unuse();
+
 		window.swapBuffer();
 	}
 
-	void MainClass::input()
+	void MainClass::input(SDL_Event& evnt)
 	{
-		SDL_Event evnt;
-		while (SDL_PollEvent(&evnt)) {
 			switch (evnt.type)
 			{
 			case SDL_QUIT:
 				exit();
 				break;
-			case SDLK_ESCAPE:
-				break;
 			default:
 				break;
 			}
-		}
 	}
 
 	void MainClass::exit()
@@ -92,6 +94,7 @@ namespace Adina {
 		m_shader.compileShaders("Shaders/vertex.txt", "Shaders/fragment.txt");
 		m_shader.addAttribute("vertexPosition");
 		m_shader.addAttribute("vertexColor");
+		m_shader.addAttribute("textureCoords");
 		m_shader.linkShaders();
 	}
 

@@ -51,9 +51,6 @@
     <ClInclude Include="graphic\Vertex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="math\math.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="math\Transform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -91,6 +88,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="models\TexturedModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="entity\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="math\my_math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -131,9 +134,6 @@
     <ClCompile Include="graphic\Vertex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="math\math.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="math\Transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -171,6 +171,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="models\TexturedModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="entity\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="math\my_math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

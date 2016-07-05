@@ -4,9 +4,9 @@
 
 #include"graphic\Window.h"
 #include"graphic\GLSLProgram.h"
-#include"math\math.h"
 #include"RenderEngine\Loader.h"
 #include"RenderEngine\Renderer.h"
+#include"entity\Camera.h"
 namespace Adina {
 
 	class MainClass
@@ -15,12 +15,9 @@ namespace Adina {
 		Window window;
 		GLSLProgram m_shader;
 		Loader m_loader;
-		Renderer m_renderer;
+		Renderer* m_renderer;
+		Camera m_camera;
 
-		mat4 projection;
-		mat4 rotMatrix;
-		mat4 translationMatrix;
-		mat4 transformMatrix;
 	public:
 		MainClass();
 		~MainClass();
@@ -29,10 +26,11 @@ namespace Adina {
 		void run();
 		void update();
 		void draw();
-		void input();
+		void input(SDL_Event& evnt);
 		void exit();
 
 		///
+	private:
 		void initShaders();
 	};
 
